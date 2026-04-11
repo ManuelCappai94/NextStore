@@ -1,0 +1,94 @@
+/* lo sfondo del container sarà un immagine rappresentante la categoria */
+.megaContainer {
+    position: relative;
+    background-color: var(--dusk-blue); 
+    display: flex;
+    justify-content: space-around;
+    height: 20rem;
+    overflow: hidden;
+
+
+}
+.img{
+    position: absolute;
+    /* overflow-x: hidden; */
+    width: 100dvw;
+    height: 100%;
+    z-index: 10;
+     object-fit: cover;
+     object-position: center;
+    
+}
+.slide{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: baseline; */
+    z-index: 20;
+}
+.slideText{
+    
+}
+.title {
+    font-size:1.5rem;
+    
+}
+.dscr{
+    font-size: 1rem;
+}
+.slideBtn{
+   
+    display: flex;
+    justify-content: baseline;
+    border: 2px solid var(--foreground);
+    background: var(--foreground);
+    color: var(--dusk-blue);
+    font-weight: bold;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    width: fit-content;
+    padding: 0.5rem;
+    
+}
+.sliderDots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    z-index: 20;
+}
+.btnsContainer{
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+    
+}
+.btnNext, .btnPrev {
+    font-size: 2rem;
+}
+
+@media screen and (min-width: 992px){
+    .megaContainer {
+        height: 40rem;
+      
+    }
+    .img{
+  
+    /* height: 30rem; */
+  
+}
+    .title {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+.dscr{
+    font-size: 1.5rem;
+}
+.slideBtn{
+    font-size: 1rem;
+}
+.btnNext, .btnPrev {
+    font-size: 3rem;
+}
+}
