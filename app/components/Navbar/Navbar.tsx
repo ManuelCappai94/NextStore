@@ -1,5 +1,5 @@
 "use client"
-import {useState} from 'react'
+import {useState, useRef, useEffect} from 'react'
 import navStyles from "./Navbar.module.css"
 import Link from 'next/link'
 import { IoMenuSharp, IoClose } from "react-icons/io5";
@@ -16,11 +16,32 @@ import { ShopCategories } from '@/app/types/shopCategory';
 const Navbar = () => {
     const [isActive, setIsActive] = useState(false)
     const [openCategory, setOpenCategory] = useState<string | null>(null)
+    const closeTimoeutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
     const  dropDownMenu = (category : ShopCategories) =>{
         if(openCategory === category.slug) return null
         else return category.slug
     }
+
+    const handleMouseEnter = (category : string )=>{
+        if(closeTimoeutRef.current){
+            clearTimeout(closeTimoeutRef.current)
+            closeTimoeutRef.current = null
+        }
+        setOpenCategory(category)
+    }
+    const handleMouseLeave = ()=>{
+        closeTimoeutRef.current = setTimeout(() =>{
+            setOpenCategory(null)
+        }, 200)
+    }
+    useEffect(()=>{
+        return () => {
+            if (closeTimoeutRef.current){
+                clearTimeout(closeTimoeutRef.current)
+            }
+        }
+    }, [])
 
   return (
     <nav className={navStyles.container}>
@@ -58,9 +79,9 @@ const Navbar = () => {
                 shopCategories.map((category)=>(
                     <li 
                         key={category.label} 
-                        className={navStyles.categoryItem}                            
-                        onMouseEnter={()=>setOpenCategory(category.slug)}
-                        onMouseLeave={()=>setOpenCategory(null)}>
+                        className={`${navStyles.categoryItem} ${openCategory === category.slug ? navStyles.activeCategory : ""}`}                            
+                        onMouseEnter={()=>handleMouseEnter(category.slug)}
+                        onMouseLeave={handleMouseLeave}>
                         <div 
                             className={navStyles.categoryLabels}
                         >
