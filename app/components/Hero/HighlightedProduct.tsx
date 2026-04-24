@@ -28,7 +28,7 @@ const HighlightedProduct = () => {
 useEffect(()=>{
     const timer = setTimeout(()=>{
       nextBanner()
-    }, 4000)
+    }, 5000)
     return() => clearTimeout(timer)
   }, [active, nextBanner])
   

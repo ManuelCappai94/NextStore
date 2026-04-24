@@ -2,32 +2,84 @@
 0 = non restringerti
 220px = larghezza base della card */
 .container{
-    width: 100%;
     display: flex;
-    flex-direction: column;
     /* flex: 0 0 100px; */
-    gap: 1.5rem;
-    padding: 0.2rem;
-    background-color: var(--foregroundDarker);
+    
+    /* padding: 0.2rem; */
+    background-color: var(--foreground);
     color: var(--text-strong);
     border-radius: 10px;
+    border: 1px solid var(--foregroundDarker);
+    height: 100%;
+}
+.home{
+    flex-direction: column;
+    width:clamp(10rem, 20vw, 15rem);
+    gap: 1.5rem;
+}
+.listing{
+    flex-direction: row;
 }
 
 .imgContainer{
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: var(--foreground);
+    background-color: var(--foregroundDarker);
+    display: flex;
+    justify-content: center;
 }
+.whishlist{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 1.5rem;
+}
+.home .imgContainer {
+  width: 100%;
+}
+
+.listing .imgContainer {
+  width: 45%;
+  padding: 10% 0;
+}
+
 .infoContainer{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    padding: 0.4rem;
+    justify-content: space-between;
+}
+.home .infoContainer {
+  width: 100%;
+}
+
+.listing .infoContainer {
+  width: 55%;
+}
+
+.home .title{
+    display: none;
+}
+.listing .title{
+    display: block;
+    font-weight: bold;
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    line-height: 1.2;
 }
 .desc{
     display: -webkit-box;
-  -webkit-line-clamp: 2; /* numero di righe */
   -webkit-box-orient: vertical;
   overflow: hidden;
+     font-size: clamp(0.85rem, 1.8vw, 1rem);
+    line-height: 1.35;
+}
+.home .desc{
+-webkit-line-clamp: 2; /* numero di righe */
+}
+.listing .desc{
+-webkit-line-clamp: 4; /* numero di righe */
 }
 .secondRow {
     display: flex;
@@ -38,49 +90,109 @@
 .priceCont{
     display: flex;
     gap: 0.4rem;
+    align-items: baseline;
+    flex-wrap: wrap;
 }
 .price{
     font-weight: bold;
-    font-size: larger;
+       font-size: clamp(1.15rem, 2.5vw, 1.6rem);
+    line-height: 1;
 }
 
 .fullPrice{
-    font-size: 0.7rem;
+   font-size: clamp(0.7rem, 1.5vw, 0.85rem);
     text-decoration: line-through;
 }
 .discount{
     color: var(--text-light);
+    font-size: clamp(0.75rem, 1.6vw, 0.95rem);
+    
+}
+.home .discount{
+ display: none;
+}
+.listing .discount{
+display: block;
+}
+.home .rating{
     display: none;
 }
-.rating{
-    display: none;
+.listing .rating{
+    display: flex;
+      gap: 0.5rem;
+    align-items: center;
+}
+.listing .stars{
+    display: flex;
+}
+.stock {
+    font-weight: bold;
+    color: var(--glaucous);
 }
 .cart{
     /* border: 2px solid black; */
     border-radius: 50px;
-    background: var(--dusk-blue);
+    background: var(--glaucous);
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     padding: 5px;
     color: var(--foreground);
+    text-align: center;
 }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .home{
+  
+    width:14rem
+  
+}
+    .listing .infoContainer{
+        padding: 1rem ;
+    }
+  .listing .title {
+    font-size: 1.4rem;
+  }
 
+  .listing .desc, .home .desc {
+    font-size: 1.2rem;
+  }
+ .home .price{
+    font-size: 1.5rem;
+ }
+  .listing .price{
+    font-size: 1.8rem;
+  }
+
+  .listing .rating,
+  .listing .stars {
+    font-size: 1.2rem;
+  }
+}
 
 @media screen and (min-width:992px){
     .container{
         flex: 0 0 220px;
-        
+    }
+    .home, .listing{
+    flex-direction: column;
+    gap: 1rem;
+    }
+    .home .imgContainer, .listing .imgContainer{
+        width: 100%;
+        padding: 0;
+    }
+    .home .infoContainer, .listing .infoContainer{
+        width: 100%;
     }
     .cart{
         cursor: pointer;
     }
-    .discount{
+    .home .discount{
         display: block;
     }
-    .rating{
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
+    .home .rating, .listing .rating{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
     }
     .stars{
         display: flex;

@@ -1,4 +1,5 @@
 import type { ProductsResponse } from "../types/products"
+import type { Product } from "../types/products"
 import api from "./axios"
 
 // const BASE_URL = "https://dummyjson.com"
@@ -43,13 +44,16 @@ export async function getAllProducts (
     }
 }
 
-// export async function getCategoriesNames(){
-//     try{
-//         const res = await fetch(`${BASE_URL}/products/category-list`)
-//         if(!res.ok) throw new Error("Errore sul fetch dei nomi")
-//             return res.json()
-//     } catch(error){
-//         console.error("Errore nomi fetch", error);
-//         throw error
-//     }
-// }
+export async function getSingleProduct(
+    id: string
+): Promise<Product> {
+    try{
+        const {data} = await api.get<Product>(
+            `/products/${id}`
+        )
+        return data
+    } catch(error){
+        console.error("errore fetch singolo prodotto")
+        throw error
+    }
+}

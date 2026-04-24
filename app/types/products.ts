@@ -28,6 +28,7 @@ export type Product = {
     reviews?: Review[]
     thumbnail: string
     images: string[]
+    availabilityStatus?: string
 }
 
 export type ProductsResponse = {
@@ -40,6 +41,7 @@ export type ProductsResponse = {
 
 export type CardSectionProps = {
   products: Product[]
-  description: string
+  description?: string
   categoryLabel?: string
+  slugSection? : string
 }

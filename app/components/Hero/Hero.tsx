@@ -1,10 +1,12 @@
 "use client"
+import Link from 'next/link'
 import {useRef} from 'react'
 import HighlightedProduct from './HighlightedProduct'
 import ProductsCard from '../productsCard/ProductsCard'
 import heroStyle from "./Hero.module.css"
 import { Product, CardSectionProps } from '@/app/types/products'
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa";
+import { shopCategories } from '@/app/src/data/categories'
 
 
 type HeroProps = {
@@ -29,23 +31,42 @@ const Hero = ({products, productsNd, productsRd}: HeroProps) => {
       <div className={heroStyle.container}>
         <CardSection 
           products={products} 
-          description={bannerText.discount}/>
+          description={bannerText.discount}
+          />
         <CardSection 
           products={productsNd} 
           description={bannerText.topProducts}
-          categoryLabel={productsNd[0]?.category}/>
+          categoryLabel={productsNd[0]?.category}
+          />
         <CardSection 
           products={productsRd} 
           description={bannerText.topProducts}
-          categoryLabel={productsRd[0]?.category}/>
+          categoryLabel={productsRd[0]?.category}
+          />
       </div>
     </section>
   )
 }
 
-const CardSection = ({products, description, categoryLabel}: CardSectionProps) => {
+const CardSection = ({products, description, categoryLabel,}: CardSectionProps) => {
   const slideRef = useRef<HTMLDivElement | null>(null)
+  
+  const getCategoryLabel = (slug:string) => {
+    for(const category of shopCategories){
+      const foundLabel = category.items.find(item => item.slug === slug)
+      const foundSlug = category.slug
+      if(foundLabel && foundSlug) {
+        return{
+          macroCategory: foundSlug,
+          slug: foundLabel.label
+        }
+      }
+     
+    }
+  }
 
+  const isCategoryLabel = categoryLabel
+  const label = isCategoryLabel ? getCategoryLabel(isCategoryLabel) : ""
 
     const scrollLeft = () => {
       slideRef.current?.scrollBy({
@@ -64,9 +85,12 @@ const CardSection = ({products, description, categoryLabel}: CardSectionProps) =
     <div className={heroStyle.categoryName}>
       <h2>
         {description}
-        {categoryLabel ?`: ${categoryLabel}` : ""} 
+        {label ?`: ${label.slug}` : ""} 
       </h2>
-        <button className={heroStyle.btns} type='button'>Vedi tutto</button>
+        <Link 
+          href={label ? `/categories/${label.macroCategory}/${categoryLabel}` : "./"}
+          className={heroStyle.linkCont}
+          ><button className={heroStyle.btns} type='button'>Vedi tutto</button></Link>
     </div>
     <div className={heroStyle.cardWrapper}>
       <div ref={slideRef} className={heroStyle.topSellers}>

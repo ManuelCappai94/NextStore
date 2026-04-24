@@ -1,0 +1,23 @@
+.container{
+    margin-top: 1rem;
+    color: black;
+}
+.imgContainer{
+    display: flex;
+}
+
+.spotlight{
+    width:400px;
+}
+.background{
+    width: 50px
+}
+.active{
+    background-color: var(--foregroundDarker);
+}
+
+@media screen and (min-width:760) {
+    .firstRow{
+        display: flex;
+    }
+}

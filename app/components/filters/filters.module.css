@@ -1,0 +1,7 @@
+.filterContainer {
+    color: black;
+}
+.filterList{
+    display: flex;
+    gap: 2rem;
+}

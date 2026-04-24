@@ -1,0 +1,21 @@
+.container{
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: black;
+    padding: 0.5rem;
+}
+
+.header{
+    width: 100%;
+    background-color: var(--text);
+    border-radius: 10px;
+    
+}
+.header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--foreground);
+    margin-left: 1rem;
+}

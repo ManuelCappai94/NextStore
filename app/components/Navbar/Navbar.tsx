@@ -85,14 +85,16 @@ const Navbar = () => {
                         <div 
                             className={navStyles.categoryLabels}
                         >
-                            <Link  href={`/product/${category.slug}`}>
+                            <Link  href={`/categories/${category.slug}`}>
                             {category.label}
                             </Link>
                             <button 
                                 type="button" 
                                 onClick={()=>setOpenCategory(dropDownMenu(category))}
                                 className={navStyles.categoryBtn}
-                                ><IoIosArrowDown/></button>
+                                >
+                                <IoIosArrowDown/>
+                            </button>
                         </div>
                         <ul className={
                             openCategory === category.slug
@@ -101,8 +103,8 @@ const Navbar = () => {
                             }>
                             {
                                 category.items.map((singleCategory)=>(
-                            <li key={singleCategory} className={navStyles.singleCategory}>
-                                <Link href={`/product/${category.slug}/${singleCategory}`}>{singleCategory}
+                            <li key={singleCategory.slug} className={navStyles.singleCategory}>
+                                <Link href={`/categories/${category.slug}/${singleCategory.slug}`}>{singleCategory.label}
                                 </Link>
                             </li>
                                 ))
