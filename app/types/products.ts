@@ -10,7 +10,10 @@ export type Dimensions = {
   height: number
   depth: number
 }
-
+type Meta = {
+  barcode: string
+  qrCode: string
+}
 
 export type Product = {
     id: number
@@ -20,15 +23,18 @@ export type Product = {
     discountPercentage: number
     rating: number
     stock: number
-    category?: string
+    category: string
     brand?: string
     sku?: string
     weight?: number
-    dimensions?: Dimensions
-    reviews?: Review[]
+    dimensions: Dimensions
+    reviews: Review[]
     thumbnail: string
     images: string[]
     availabilityStatus?: string
+    shippingInformation: string
+    warrantyInformation: string
+    meta?: Meta
 }
 
 export type ProductsResponse = {

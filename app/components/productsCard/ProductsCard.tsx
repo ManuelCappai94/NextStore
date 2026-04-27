@@ -7,6 +7,7 @@ import { Product } from '@/app/types/products';
 import { discountCalc } from '@/app/lib/helpers/percentageCalc'
 import { starsRating } from '@/app/lib/helpers/StarCreator';
 import { FaHeart, FaRegHeart } from "react-icons/fa"
+import { Avaiability } from "../Avaiability/Avaiability";
 
 type CardProps = {
   product: Product
@@ -33,15 +34,6 @@ const ProductsCard = ({product, variant = "home" } : CardProps ) => {
     product.availabilityStatus === "In Stock" ||
     product.availabilityStatus === "Low Stock"
 
-  const avaiability = () =>{
-    if(product.availabilityStatus === "In Stock"){
-      return <p>Acqista ora</p>
-    }else if(product.availabilityStatus === "Low Stock"){
-      return <p>Solo <span className={productStyle.stock}>{product.stock}</span> rimanenti !</p>
-    } else {
-      return <p>Tornerà Presto !</p>
-    }
-  }
 
    const handleClickCart = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
@@ -98,7 +90,7 @@ const ProductsCard = ({product, variant = "home" } : CardProps ) => {
         </span>
         </div>
         <div className={productStyle.avaiablilty}>
-          {avaiability()}
+          <Avaiability {...product}/>
         </div>
             <button 
               type='button' 

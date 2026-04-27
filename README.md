@@ -39,7 +39,7 @@ The project is being developed in structured phases:
 
 ---
 
-### 🟡 Phase 2 — Pages & Navigation (In Progress)
+### 🟡 Phase 2 — Pages & Navigation ✅
 - Dynamic Hero banner  
 - Category pages  
 - Product detail page  
@@ -47,16 +47,14 @@ The project is being developed in structured phases:
 
 ---
 
-### 🟠 Phase 2.5 — Internal API & Custom Data Source
+### 🟠 Phase 2.5 — Internal API & Custom Data Source ✅
 - Creation of internal API routes using Next.js  
-- Definition of a custom product catalog  
-- Simulation of a “marketplace” / second-hand section  
-- Fetching internal data within the application  
-- Introduction to backend-like logic within a frontend project  
+- Enhancement of external API data to better fit application needs  
+- Integration of internal API within the product detail page   
 
 ---
 
-### 🔴 Phase 3 — State Management & Features
+### 🔴 Phase 3 — State Management & Features (in progress)
 - Redux Toolkit integration  
 - Cart system  
 - Wishlist system  

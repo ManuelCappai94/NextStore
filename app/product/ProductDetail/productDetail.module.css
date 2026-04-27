@@ -1,23 +1,192 @@
 .container{
     margin-top: 1rem;
     color: black;
+    padding: 0.5rem;
 }
 .imgContainer{
     display: flex;
 }
 
+.title{
+    font-weight: bold;
+    font-size: clamp(1.2rem, 2vw, 1.6rem);
+}
+
 .spotlight{
     width:400px;
 }
-.background{
+.thumbnail{
     width: 50px
 }
 .active{
     background-color: var(--foregroundDarker);
 }
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.priceSection{
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+}
+.finalPrice{
+    display: flex;
+    gap: 0.1rem;
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: bolder;
+}
+.currency{
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+.discount{
+    color: var(--dusk-blue);
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+}
+.originalPrice{
+   text-decoration: line-through;
+   font-size: smaller;
+}
+
+.ratingSection{
+    display: flex;
+    gap: 0.5rem;
+    
+}
+.ratingSection p{
+    display: flex;
+    gap: 0.2rem; 
+}
+
+.ratingBtn{
+    
+    color: var(--glaucous);
+    cursor: pointer;
+}
+.stars{
+    display: flex;
+    color: orange;
+    font-size: 1.2rem;
+}
+.avaiabilityInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    
+    margin-top: 1rem;
+}
+.avaiabilityInfo p {
+    margin-left: 1.5rem;
+}
+.avaiability{
+    font-weight: bold;
+}
+.cart, .notAvaiable{
+    color: var(--foreground);
+    font-weight: bold;
+    width: fit-content;
+    padding: 0.3rem;
+    border-radius: 15px;
+    margin-top: 1rem;
+    margin-left: 0;
+}
+.cart{
+    background-color: var(--glaucous);
+}
+.notAvaiable{
+   background-color: var(--dusk-blue);
+}
+.secondRow{
+    margin: 2rem 0 0 3rem;
+}
+.specList{
+  margin-left: 1rem;
+  margin-top: 1rem;
+   background-color: var(--foregroundDarker);
+    width: fit-content;
+    padding: 0.5rem;
+}
+.specItem{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+   
+}
+.qrCode{
+    width: 100px;
+}
+.thirdRow{
+    margin-top: 2rem;
+}
+.usersRewiews{
+    display: grid;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 1rem;
+    
+}
+.commentsRow{
+    
+    margin: 3rem 0 0 1rem
+}
+.commentsRow h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.comments{
+ width: fit-content;
+    margin-left: 1rem;
+    border-bottom: 1px dashed black;
+    
+}
+.comments li{
+    margin-bottom: 1rem;
+}
+.userAccount{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.userImage{
+    width: 40px;
+    
+}
+.reviewDate{
+    font-size: smaller;
+    color: var(--text-light);
+}
+.specs summary {
+
+cursor: pointer;
+}
+summary::marker{
+    color: var(--glaucous);
+}
 
 @media screen and (min-width:760) {
-    .firstRow{
+  
+}
+
+@media screen and (min-width:960) {
+      .firstRow{
         display: flex;
+        gap: 1rem;
     }
+    .spotlight{
+    width:800px;
+}
+.thumbnail{
+    width: 100px
+}
+.cart:hover{
+    background-color: var(--text-strong);
+}
+.usersRewiews{
+
+    gap: 1rem;
+}
+.commentsRow{
+    
+    margin-left: 3rem
+}
 }

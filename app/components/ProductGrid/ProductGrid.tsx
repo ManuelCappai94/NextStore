@@ -5,7 +5,7 @@ import style from "./productGrid.module.css"
 import type { CardSectionProps } from '@/app/types/products'
 
 
-const listingPage = ({products}: CardSectionProps ) => {
+const ProductGrid = ({products}: CardSectionProps ) => {
     console.log(products)
   return (
         <div className={style.productGrid}>
@@ -19,4 +19,4 @@ const listingPage = ({products}: CardSectionProps ) => {
         </div>
   )
 }
-export default listingPage
+export default ProductGrid

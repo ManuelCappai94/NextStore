@@ -125,10 +125,10 @@ display: block;
 .listing .stars{
     display: flex;
 }
-.stock {
+/* .stock {
     font-weight: bold;
     color: var(--glaucous);
-}
+} */
 .cart{
     /* border: 2px solid black; */
     border-radius: 50px;

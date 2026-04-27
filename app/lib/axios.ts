@@ -8,4 +8,12 @@ const api = axios.create({
     }
 })
 
+export const internalApi = axios.create({
+    baseURL: process.env.NEXT_PUBLIC_SITE_URL,
+    timeout: 5000,
+    headers :{
+
+    }
+})
+
 export default api
