@@ -44,9 +44,9 @@ useEffect(()=>{
             if(position === 0){
               classes= `${productStyle.active}`
             } else if(position === 1){
-              classes= `${productStyle.prevActive}`
-            } else {
               classes= `${productStyle.nextActive}`
+            } else {
+              classes= `${productStyle.prevActive}`
             }
             return <BannerInfo key={banner._id} {...banner} classes={classes}/>
           })

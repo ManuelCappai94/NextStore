@@ -2,7 +2,7 @@
 
 A modern e-commerce application built with **Next.js**, designed to simulate a real-world online store with scalable architecture and clean UI.
 
-> ⚠️ This project is currently under active development. Phase 1 has been completed.
+> ⚠️ This project is currently under active development. Phase 2.5 has been completed.
 
 ---
 
@@ -77,16 +77,16 @@ This project is focused on:
 ## 📸 Preview
 
 ### 🏠 Homepage (Desktop)
-![Homepage](./public/screenshots/nav+banner.jpeg)
+![Homepage](./public/screenshots/hero.jpeg)
 
 ### 🛒 Product Sections
-![Products](./public/screenshots/cards+rows.jpeg)
+![Products](./public/screenshots/categoryPage.jpeg)
 
-### 🔚 Footer Section
-![Footer](./public/screenshots/lastRow+footer.jpeg)
+### 🔚 Product Details
+![Details](./public/screenshots/productDetails.jpeg)
 
-### 📱 Mobile View
-![Mobile](./public/screenshots/nav_mobile.jpeg)
+### 📱 Review Section
+![Reviews](./public/screenshots/commentSection.jpeg)
 
 ---
 

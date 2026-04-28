@@ -1,6 +1,6 @@
 .megaContainer {
     background-color: var(--dusk-blue); 
-    height: 20rem;
+    height: 25rem;
     position: relative;
 }
 .active, .prevActive, .nextActive{
@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 20rem;
+    height: 25rem;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
